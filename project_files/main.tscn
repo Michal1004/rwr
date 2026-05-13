@@ -1,5 +1,8 @@
 [gd_scene format=3 uid="uid://cqow47bch5ocs"]
 
+[ext_resource type="PackedScene" uid="uid://clsdopoafd6jf" path="res://assets/models/hand_left.glb" id="1_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://cnjofvw53ikdq" path="res://assets/models/hand_right.glb" id="2_h2yge"]
+
 [sub_resource type="BoxMesh" id="BoxMesh_7dm0k"]
 size = Vector3(0.1, 0.1, 0.1)
 
@@ -11,18 +14,31 @@ size = Vector3(0.1, 0.1, 0.1)
 [node name="XROrigin3D" type="XROrigin3D" parent="." unique_id=1095657731]
 
 [node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D" unique_id=1545483951]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.017983317, -0.12181568, 0.06600666)
 
 [node name="LeftController" type="XRController3D" parent="XROrigin3D" unique_id=334753170]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.21306649, 0, 0.2605585)
 tracker = &"left_hand"
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="XROrigin3D/LeftController" unique_id=1496738026]
 mesh = SubResource("BoxMesh_7dm0k")
 
+[node name="Node3D HandLeftRoot" type="Node3D" parent="XROrigin3D/LeftController" unique_id=1611050035]
+
+[node name="hand_left" parent="XROrigin3D/LeftController/Node3D HandLeftRoot" unique_id=735399360 instance=ExtResource("1_0xm2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2916114, -0.4364888, 0.1717856)
+
 [node name="RightController" type="XRController3D" parent="XROrigin3D" unique_id=1445229272]
 tracker = &"right_hand"
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="XROrigin3D/RightController" unique_id=314137826]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.041434526, -0.11833525, 0.05102873)
 mesh = SubResource("BoxMesh_ig7tw")
+
+[node name="Node3D HandRightRoot" type="Node3D" parent="XROrigin3D/RightController" unique_id=140452139]
+
+[node name="hand_right" parent="XROrigin3D/RightController/Node3D HandRightRoot" unique_id=822245146 instance=ExtResource("2_h2yge")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8365482, -0.28837925, 0.5393046)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=225138735]
 
