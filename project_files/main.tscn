@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://cqow47bch5ocs"]
 
-[ext_resource type="PackedScene" uid="uid://clsdopoafd6jf" path="res://assets/models/hand_left.glb" id="1_0xm2m"]
 [ext_resource type="Script" uid="uid://bempvqvskvxb7" path="res://main.gd" id="1_h2yge"]
-[ext_resource type="PackedScene" uid="uid://cnjofvw53ikdq" path="res://assets/models/hand_right.glb" id="2_h2yge"]
 [ext_resource type="Script" uid="uid://b17ls5wfo184d" path="res://xr_origin_3d.gd" id="2_lquwl"]
 [ext_resource type="Script" uid="uid://bfoj2cdymtbcs" path="res://right_controller.gd" id="3_1bvp3"]
 [ext_resource type="Script" uid="uid://defqclfolssnc" path="res://left_controller.gd" id="3_7mycd"]
+[ext_resource type="ArrayMesh" uid="uid://d2170uyll3m3h" path="res://assets/models/lewa.res" id="4_7mycd"]
+[ext_resource type="ArrayMesh" uid="uid://cskm4hn5lr2lh" path="res://assets/models/prawa.res" id="6_272bh"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_lquwl"]
 top_radius = 0.05
@@ -74,20 +74,14 @@ transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -0.2
 tracker = &"left_hand"
 script = ExtResource("3_7mycd")
 
-[node name="Node3D HandLeftRoot" type="Node3D" parent="XROrigin3D/LeftController" unique_id=1611050035]
-
-[node name="hand_left" parent="XROrigin3D/LeftController/Node3D HandLeftRoot" unique_id=735399360 instance=ExtResource("1_0xm2m")]
-transform = Transform3D(-0.007552204, -0.09967688, 0.00273574, -0.09969665, 0.0074962247, -0.0020942418, 0.0018823979, -0.0028855985, -0.099940635, -0.0623336, 0.12172519, -0.009999994)
+[node name="left_hand" type="MeshInstance3D" parent="XROrigin3D/LeftController" unique_id=329240201]
+transform = Transform3D(0.035160657, -0.19663845, -0.009851388, -0.19622886, -0.034183204, -0.018048426, 0.016061312, 0.012838604, -0.19894022, 0.023697793, 0.31307086, -0.2689401)
+mesh = ExtResource("4_7mycd")
 
 [node name="RightController" type="XRController3D" parent="XROrigin3D" unique_id=1445229272]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -0.059881926, 0.14654046, 0)
 tracker = &"right_hand"
 script = ExtResource("3_1bvp3")
-
-[node name="Node3D HandRightRoot" type="Node3D" parent="XROrigin3D/RightController" unique_id=140452139]
-
-[node name="hand_right" parent="XROrigin3D/RightController/Node3D HandRightRoot" unique_id=822245146 instance=ExtResource("2_h2yge")]
-transform = Transform3D(0.01652346, -0.0979314, 0.011679927, -0.09854937, -0.01592961, 0.0058534136, -0.003871752, -0.01247768, -0.0991429, 0.18274803, -0.03161989, -0.07917868)
 
 [node name="TeleportRay" type="RayCast3D" parent="XROrigin3D/RightController" unique_id=360056010]
 exclude_parent = false
@@ -96,6 +90,10 @@ target_position = Vector3(0, 0, -10)
 [node name="TeleportMarker" type="MeshInstance3D" parent="XROrigin3D/RightController" unique_id=1626452756]
 visible = false
 mesh = SubResource("CylinderMesh_lquwl")
+
+[node name="right_hand" type="MeshInstance3D" parent="XROrigin3D/RightController" unique_id=1132669681]
+transform = Transform3D(-0.0065981913, -0.19509284, -0.043534376, 0.19925864, -0.00988166, 0.014082995, -0.015888417, -0.042908397, 0.19469571, 0.14909002, 0.15547866, -0.2598758)
+mesh = ExtResource("6_272bh")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=225138735]
 
