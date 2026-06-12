@@ -1,0 +1,206 @@
+[gd_scene format=3 uid="uid://ccvxjwg6wiprf"]
+
+[ext_resource type="Script" uid="uid://cs7tdlnjn3kv3" path="res://main_node_script.gd" id="1_a202f"]
+[ext_resource type="Script" uid="uid://x478ms11dvjh" path="res://chodzenie.gd" id="2_i5arm"]
+[ext_resource type="ArrayMesh" uid="uid://d2170uyll3m3h" path="res://assets/models/lewa.res" id="3_jka67"]
+[ext_resource type="Script" uid="uid://c21yh7suyvtgr" path="res://kontroler_prawy.gd" id="5_i5arm"]
+[ext_resource type="ArrayMesh" uid="uid://cskm4hn5lr2lh" path="res://assets/models/prawa.res" id="5_wc5p8"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_r3fl7"]
+top_radius = 0.05
+bottom_radius = 0.005
+height = 0.15
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_r3fl7"]
+size = Vector2(20, 20)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jsk3o"]
+albedo_color = Color(0.487993, 0.6978101, 0.21855363, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_r3fl7"]
+size = Vector3(20, 0.1, 20)
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_r3fl7"]
+sky_top_color = Color(0.2198314, 0.4592415, 0.71308523, 1)
+
+[sub_resource type="Sky" id="Sky_jka67"]
+sky_material = SubResource("ProceduralSkyMaterial_r3fl7")
+
+[sub_resource type="Environment" id="Environment_i5arm"]
+background_mode = 2
+background_color = Color(0.7768833, 0.2439712, 0.42687735, 1)
+background_energy_multiplier = 0.66
+sky = SubResource("Sky_jka67")
+ambient_light_sky_contribution = 0.1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4arys"]
+albedo_color = Color(0.37674087, 0.19569731, 0.0012109216, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_i5arm"]
+material = SubResource("StandardMaterial3D_4arys")
+top_radius = 1.5
+bottom_radius = 3.0
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_wc5p8"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6iypd"]
+albedo_color = Color(1, 0.6862745, 0.21960784, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_wc5p8"]
+material = SubResource("StandardMaterial3D_6iypd")
+top_radius = 1.0
+bottom_radius = 1.0
+height = 8.0
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_r3fl7"]
+height = 10.0
+radius = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tereu"]
+albedo_color = Color(1, 0.8901961, 0.11372549, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_wc5p8"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_cdqbm"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4arys"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_imku0"]
+albedo_color = Color(0.85629016, 0.28608185, 7.70092e-07, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_wlxy5"]
+top_radius = 1.25
+bottom_radius = 1.25
+height = 0.25
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_3v7ru"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_tcnuu"]
+
+[sub_resource type="PrismMesh" id="PrismMesh_tuemg"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i0g27"]
+albedo_color = Color(0.67978287, 0.03977434, 0.18939096, 1)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ealrb"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jsnrv"]
+
+[node name="main" type="Node3D" unique_id=1608127333]
+script = ExtResource("1_a202f")
+
+[node name="XROrigin3D" type="XROrigin3D" parent="." unique_id=1531300732]
+script = ExtResource("2_i5arm")
+
+[node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D" unique_id=1900225849]
+transform = Transform3D(0.81417656, -0.013105774, 0.5804695, -3.236877e-05, 0.9997442, 0.022617515, -0.58061737, -0.018433439, 0.8139679, -0.55917513, 2.1681411, 2.315373)
+fov = 33.2147
+
+[node name="LeftController" type="XRController3D" parent="XROrigin3D" unique_id=1202177254]
+tracker = &"left_hand"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="XROrigin3D/LeftController" unique_id=1140688014]
+transform = Transform3D(0.04080842, 0.29720584, 0.0018324027, -0.29690668, 0.04084954, -0.013331867, -0.013457205, -6.9849193e-10, 0.29969802, -0.05520393, 0.3589983, 0)
+mesh = ExtResource("3_jka67")
+
+[node name="RightController" type="XRController3D" parent="XROrigin3D" unique_id=702861936]
+tracker = &"right_hand"
+show_when_tracked = true
+script = ExtResource("5_i5arm")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="XROrigin3D/RightController" unique_id=1837727602]
+transform = Transform3D(-0.0038950953, 0.2999746, -0.00029119995, 0.2991396, 0.0039059657, 0.02236645, 0.022368345, 3.342284e-08, -0.29916495, 0.07378295, 0.3752526, 0.036608815)
+mesh = ExtResource("5_wc5p8")
+
+[node name="TeleportRay" type="RayCast3D" parent="XROrigin3D/RightController" unique_id=643950302]
+exclude_parent = false
+target_position = Vector3(0, 0, -10)
+
+[node name="TeleportMarker" type="MeshInstance3D" parent="XROrigin3D/RightController" unique_id=258989186]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.014090128, 0.07742677, 0.08054422)
+visible = false
+mesh = SubResource("CylinderMesh_r3fl7")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=596215835]
+
+[node name="Button" type="Button" parent="CanvasLayer" unique_id=2947607]
+offset_left = 311.0
+offset_top = 134.0
+offset_right = 809.0
+offset_bottom = 406.0
+text = "Enter VR"
+
+[node name="Level" type="Node3D" parent="." unique_id=1232669096]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Level" unique_id=584083095]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.004261017, -0.0030001192, -0.0028248816)
+mesh = SubResource("PlaneMesh_r3fl7")
+surface_material_override/0 = SubResource("StandardMaterial3D_jsk3o")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Level/MeshInstance3D" unique_id=1964996518]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/MeshInstance3D/StaticBody3D" unique_id=20714444]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.027, 0, -0.16)
+shape = SubResource("BoxShape3D_r3fl7")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Level" unique_id=233897100]
+transform = Transform3D(0.9951275, 0.09448815, -0.02816518, -0.03528015, 0.6079892, 0.79316115, 0.09206846, -0.7883029, 0.60836035, -3.1179013, 11.483887, 8.6651125)
+shadow_enabled = true
+shadow_bias = 0.396
+shadow_normal_bias = 2.693
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Level" unique_id=1702281904]
+environment = SubResource("Environment_i5arm")
+
+[node name="wulkan" type="MeshInstance3D" parent="Level" unique_id=691846283]
+transform = Transform3D(0.99902636, 0.0031934131, 0.044002768, -0.0031373152, 0.99999416, -0.0013440751, -0.044006813, 0.0012047404, 0.9990306, -4.536646, 0.9606558, -7.14793)
+mesh = SubResource("CylinderMesh_i5arm")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Level/wulkan" unique_id=2063664493]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/wulkan/StaticBody3D" unique_id=1247198310]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.03932762, 0.0009288788)
+shape = SubResource("CylinderShape3D_wc5p8")
+
+[node name="wieza" type="MeshInstance3D" parent="Level" unique_id=1326337335]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.398824, 3.9652596, 4.7853165)
+mesh = SubResource("CylinderMesh_wc5p8")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Level/wieza" unique_id=65662864]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/wieza/StaticBody3D" unique_id=1790208528]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.72029734, 0)
+shape = SubResource("CylinderShape3D_r3fl7")
+
+[node name="domek" type="MeshInstance3D" parent="Level" unique_id=1061980651]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.6770434, 0.49291754, 5.4705772)
+material_override = SubResource("StandardMaterial3D_tereu")
+mesh = SubResource("BoxMesh_wc5p8")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Level/domek" unique_id=1513758651]
+physics_material_override = SubResource("PhysicsMaterial_cdqbm")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/domek/StaticBody3D" unique_id=507280449]
+shape = SubResource("BoxShape3D_4arys")
+
+[node name="lawa" type="MeshInstance3D" parent="Level" unique_id=643076409]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.53, 2.101, -7.14)
+material_override = SubResource("StandardMaterial3D_imku0")
+mesh = SubResource("CylinderMesh_wlxy5")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Level/lawa" unique_id=1125038505]
+physics_material_override = SubResource("PhysicsMaterial_3v7ru")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/lawa/StaticBody3D" unique_id=950630426]
+shape = SubResource("CylinderShape3D_tcnuu")
+
+[node name="dach" type="MeshInstance3D" parent="Level" unique_id=621168165]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.67491, 1.441, 5.458916)
+mesh = SubResource("PrismMesh_tuemg")
+surface_material_override/0 = SubResource("StandardMaterial3D_i0g27")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Level/dach" unique_id=1153558859]
+physics_material_override = SubResource("PhysicsMaterial_ealrb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/dach/StaticBody3D" unique_id=750983550]
+shape = SubResource("BoxShape3D_jsnrv")
