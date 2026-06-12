@@ -69,23 +69,23 @@ transform = Transform3D(0.9396927, -0.0059690746, 0.34196803, 0, 0.9998477, 0.01
 fov = 109.19813
 
 [node name="LeftController" type="XRController3D" parent="XROrigin3D" unique_id=334753170]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -0.27963063, 0.018869877, 0)
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -0.22470424, 0.003961563, 0)
 tracker = &"left_hand"
 
 [node name="Node3D HandLeftRoot" type="Node3D" parent="XROrigin3D/LeftController" unique_id=1611050035]
 
 [node name="hand_left" parent="XROrigin3D/LeftController/Node3D HandLeftRoot" unique_id=735399360 instance=ExtResource("1_0xm2m")]
-transform = Transform3D(4.371139e-09, -0.1, 8.742278e-09, -0.1, -4.371139e-09, 0, 3.8213711e-16, -8.742278e-09, -0.1, -0.004999995, 0.12172519, -0.01)
+transform = Transform3D(-0.007552204, -0.09967688, 0.00273574, -0.09969665, 0.0074962247, -0.0020942418, 0.0018823979, -0.0028855985, -0.099940635, -0.0623336, 0.12172519, -0.009999994)
 
 [node name="RightController" type="XRController3D" parent="XROrigin3D" unique_id=1445229272]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -0.0066686273, 0.05032803, 0)
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -0.0066686273, 0.14654046, 0)
 tracker = &"right_hand"
 script = ExtResource("3_1bvp3")
 
 [node name="Node3D HandRightRoot" type="Node3D" parent="XROrigin3D/RightController" unique_id=140452139]
 
 [node name="hand_right" parent="XROrigin3D/RightController/Node3D HandRightRoot" unique_id=822245146 instance=ExtResource("2_h2yge")]
-transform = Transform3D(4.6934696e-09, 0.1, 2.6220889e-08, -0.09993201, 3.7235046e-09, 0.0036870386, 0.0036870386, -2.637611e-08, 0.09993201, 0.25824386, 0.050543815, -0.12667511)
+transform = Transform3D(0.01652346, -0.0979314, 0.011679927, -0.09854937, -0.01592961, 0.0058534136, -0.003871752, -0.01247768, -0.0991429, 0.18274803, -0.03161989, -0.07917868)
 
 [node name="TeleportRay" type="RayCast3D" parent="XROrigin3D/RightController" unique_id=360056010]
 exclude_parent = false
