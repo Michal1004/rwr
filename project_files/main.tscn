@@ -4,8 +4,8 @@
 [ext_resource type="Script" uid="uid://b17ls5wfo184d" path="res://xr_origin_3d.gd" id="2_lquwl"]
 [ext_resource type="Script" uid="uid://bfoj2cdymtbcs" path="res://right_controller.gd" id="3_1bvp3"]
 [ext_resource type="Script" uid="uid://defqclfolssnc" path="res://left_controller.gd" id="3_7mycd"]
-[ext_resource type="ArrayMesh" uid="uid://d2170uyll3m3h" path="res://assets/models/lewa.res" id="4_7mycd"]
-[ext_resource type="ArrayMesh" uid="uid://cskm4hn5lr2lh" path="res://assets/models/prawa.res" id="6_272bh"]
+[ext_resource type="ArrayMesh" uid="uid://dau5yycjgakjg" path="res://assets/models/lewa.res" id="4_7mycd"]
+[ext_resource type="ArrayMesh" uid="uid://bm5kyhgnnmjl6" path="res://assets/models/prawa.res" id="6_272bh"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_lquwl"]
 top_radius = 0.05
@@ -75,7 +75,7 @@ tracker = &"left_hand"
 script = ExtResource("3_7mycd")
 
 [node name="left_hand" type="MeshInstance3D" parent="XROrigin3D/LeftController" unique_id=329240201]
-transform = Transform3D(0.035160657, -0.19663845, -0.009851388, -0.19622886, -0.034183204, -0.018048426, 0.016061312, 0.012838604, -0.19894022, 0.023697793, 0.31307086, -0.2689401)
+transform = Transform3D(0.031008318, -0.19495548, 0.03210678, -0.19622886, -0.0341832, -0.01804843, 0.023080766, -0.028703129, -0.1965793, 0.023697793, 0.31307086, -0.2689401)
 mesh = ExtResource("4_7mycd")
 
 [node name="RightController" type="XRController3D" parent="XROrigin3D" unique_id=1445229272]
