@@ -85,9 +85,10 @@ script = ExtResource("3_1bvp3")
 [node name="Node3D HandRightRoot" type="Node3D" parent="XROrigin3D/RightController" unique_id=140452139]
 
 [node name="hand_right" parent="XROrigin3D/RightController/Node3D HandRightRoot" unique_id=822245146 instance=ExtResource("2_h2yge")]
-transform = Transform3D(4.734331e-09, 0.1, 8.749826e-09, 0.09991367, -5.0937494e-09, 0.0041544335, 0.0041544335, 8.545586e-09, -0.09991367, 0.25050735, -0.034254543, -0.1266751)
+transform = Transform3D(4.6934696e-09, 0.1, 2.6220889e-08, -0.09993201, 3.7235046e-09, 0.0036870386, 0.0036870386, -2.637611e-08, 0.09993201, 0.25824386, 0.050543815, -0.12667511)
 
 [node name="TeleportRay" type="RayCast3D" parent="XROrigin3D/RightController" unique_id=360056010]
+exclude_parent = false
 target_position = Vector3(0, 0, -10)
 
 [node name="TeleportMarker" type="MeshInstance3D" parent="XROrigin3D/RightController" unique_id=1626452756]
@@ -106,14 +107,15 @@ text = "Enter VR"
 [node name="Node3D Level" type="Node3D" parent="." unique_id=1035724941]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D Level" unique_id=261712628]
-transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 0.0013117194, -0.0050081015, -0.22108608)
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 0.001, -0.005, 0)
 mesh = SubResource("PlaneMesh_0xm2m")
 surface_material_override/0 = SubResource("StandardMaterial3D_h2yge")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Node3D Level/MeshInstance3D" unique_id=1153829320]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0037529827, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D Level/MeshInstance3D/StaticBody3D" unique_id=621276721]
-transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 0, 0, -100.74707)
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 0, -0.05, 0)
 shape = SubResource("BoxShape3D_0xm2m")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Node3D Level" unique_id=999158876]
