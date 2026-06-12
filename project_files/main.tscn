@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cnjofvw53ikdq" path="res://assets/models/hand_right.glb" id="2_h2yge"]
 [ext_resource type="Script" uid="uid://b17ls5wfo184d" path="res://xr_origin_3d.gd" id="2_lquwl"]
 [ext_resource type="Script" uid="uid://bfoj2cdymtbcs" path="res://right_controller.gd" id="3_1bvp3"]
+[ext_resource type="Script" uid="uid://defqclfolssnc" path="res://left_controller.gd" id="3_7mycd"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_lquwl"]
 top_radius = 0.05
@@ -71,6 +72,7 @@ fov = 109.19813
 [node name="LeftController" type="XRController3D" parent="XROrigin3D" unique_id=334753170]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -0.22470424, 0.003961563, 0)
 tracker = &"left_hand"
+script = ExtResource("3_7mycd")
 
 [node name="Node3D HandLeftRoot" type="Node3D" parent="XROrigin3D/LeftController" unique_id=1611050035]
 
@@ -78,7 +80,7 @@ tracker = &"left_hand"
 transform = Transform3D(-0.007552204, -0.09967688, 0.00273574, -0.09969665, 0.0074962247, -0.0020942418, 0.0018823979, -0.0028855985, -0.099940635, -0.0623336, 0.12172519, -0.009999994)
 
 [node name="RightController" type="XRController3D" parent="XROrigin3D" unique_id=1445229272]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -0.0066686273, 0.14654046, 0)
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -0.059881926, 0.14654046, 0)
 tracker = &"right_hand"
 script = ExtResource("3_1bvp3")
 
@@ -107,7 +109,7 @@ text = "Enter VR"
 [node name="Node3D Level" type="Node3D" parent="." unique_id=1035724941]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D Level" unique_id=261712628]
-transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 0.001, -0.005, 0)
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 0.001, 0, 0)
 mesh = SubResource("PlaneMesh_0xm2m")
 surface_material_override/0 = SubResource("StandardMaterial3D_h2yge")
 
